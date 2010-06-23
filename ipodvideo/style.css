@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+#ipod {
+    background-image: url("ipod.png");
+    width: 640px;
+    height: 719px;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.6, transparent), to(white));
+}
+#ipod video {
+    position: relative;
+    left: 117px;
+    top: 104px;
+    width: 304px;
+    height: 229px;
+}
+#ipod a {
+    -webkit-transition: -webkit-box-shadow 0.15s;
+    -webkit-border-radius: 6px;
+    position: absolute;
+    display: block;
+    height: 25px;
+}
+#ipod a:hover {
+    -webkit-box-shadow: 0px 0px 3px #ACACAC;
+}
+#ipod a#menu {
+    width: 61px;
+    left: 238px;
+    top: 400px;
+    background-image: url("menu.png");
+}
+#ipod a#ff {
+    width: 43px;
+    left: 337px;
+    top: 496px;
+    background-image: url("ff.png");
+}
+#ipod a#pp {
+    width: 50px;
+    left: 243px;
+    top: 591px;
+    background-image: url("pp.png");
+}
+#ipod a#rew {
+    width: 43px;
+    left: 159px;
+    top: 496px;
+    background-image: url("rew.png");
+}
