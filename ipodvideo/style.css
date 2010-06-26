@@ -16,13 +16,16 @@ body {
 }
 #ipod a {
     -webkit-transition: -webkit-box-shadow 0.15s;
+	-moz-transition: -moz-box-shadow 0.15s;
     -webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
     position: absolute;
     display: block;
     height: 25px;
 }
 #ipod a:hover {
     -webkit-box-shadow: 0px 0px 3px #ACACAC;
+	-moz-box-shadow: 0px 0px 3px #ACACAC;
 }
 #ipod a#menu {
     width: 61px;
