@@ -67,7 +67,7 @@ function loaded() {
     
     drawContext();
     
-    // this is necessary if the custom fon't hasn't loaded by the time the page loads
+    // this is necessary if the custom font hasn't loaded by the time the page loads
     setTimeout("drawContext();", 1000);
 }
 
