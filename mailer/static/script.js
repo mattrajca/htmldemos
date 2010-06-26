@@ -84,14 +84,13 @@ function sendMessage() {
     var x = (document.body.clientWidth / 2) + 362;
     var transform = "rotate(-2deg) translateX(" + x + "px)";
     
-    pc.addEventListener('webkitTransitionEnd', displaySuccessDialog, false);
-    
     if ('MozTransform' in document.body.style) {
         pc.style.MozTransform = transform;
         displaySuccessDialog(); // moz-transition currently doesn't animate moz-transform's
     }
     
     if ('webkitTransform' in document.body.style) {
+        pc.addEventListener('webkitTransitionEnd', displaySuccessDialog, false);
         pc.style.webkitTransform = transform;
     }
 }
