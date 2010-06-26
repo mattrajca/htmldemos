@@ -7,7 +7,7 @@ from google.appengine.ext.webapp import util
 import os
 
 # place your name and email below in the format: NAME <EMAIL>
-ADDRESSEE = "Matt Rajca <matt.rajca@me.com>"
+ADDRESSEE = ""
 
 class SendMessageHandler(webapp.RequestHandler):
     def post(self):
