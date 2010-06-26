@@ -12,3 +12,8 @@ ipodvideo
 ---------
 
 Embeds a live HTML5 video element inside the screen of an iPod classic. The buttons on the iPod's click-wheel work as expected.
+
+mailer
+------
+
+Uses Google App Engine on the server-side and HTML5 technologies on the client side to display a rich, interactive feedback form that looks like a postcard.
