@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 #ipod {
-    background-image: url("ipod.png");
+    background-image: url("images/ipod.png");
     width: 640px;
     height: 719px;
     -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.6, transparent), to(white));
@@ -31,23 +31,23 @@ body {
     width: 61px;
     left: 238px;
     top: 400px;
-    background-image: url("menu.png");
+    background-image: url("images/menu.png");
 }
 #ipod a#ff {
     width: 43px;
     left: 337px;
     top: 496px;
-    background-image: url("ff.png");
+    background-image: url("images/ff.png");
 }
 #ipod a#pp {
     width: 50px;
     left: 243px;
     top: 591px;
-    background-image: url("pp.png");
+    background-image: url("images/pp.png");
 }
 #ipod a#rew {
     width: 43px;
     left: 159px;
     top: 496px;
-    background-image: url("rew.png");
+    background-image: url("images/rew.png");
 }
