@@ -18,6 +18,8 @@ div.dialog {
     margin-left: -130px;
     width: 260px;
     display: block;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     -moz-box-shadow: 0px 0px 5px #707070;
     -webkit-box-shadow: 0px 0px 5px #707070;
 }
