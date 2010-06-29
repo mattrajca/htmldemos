@@ -1,0 +1,31 @@
+body {
+    margin-top: 100px;
+    background-color: #D6DDE6;
+    font-family: Helvetica;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+p {
+    margin: 0;
+    font-size: 13px;
+}
+a {
+    font-size: 14px;
+    color: #4F4F4F;
+    -webkit-transition: color 0.25s;
+    -moz-transition: color 0.25s;
+}
+a:hover {
+    color: #001599;
+}
+.centerText {
+    text-align: center;
+}
+.whiteShadow {
+    text-shadow: white 0px 1px 1px;
+}
+.clearFix {
+    clear: both;
+}

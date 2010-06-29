@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stalker | Visits</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/global.css" type="text/css">
+        <link rel="stylesheet" href="/static/visits.css" type="text/css">
+        
+        <script type="text/javascript">
+        
+            function clearVisits() {
+                var req = new XMLHttpRequest();
+                req.open("POST", "/clear", true);
+                req.send("");
+                
+                animateClear();
+            }
+            
+            function animateClear() {
+                var parent = document.getElementById("parent");
+                var entries = document.getElementById("entries");
+                parent.style.top = "-" + (entries.clientHeight + 4) + "px";
+            }
+        
+        </script>
+    </head>
+    
+    <body>
+        <div id="parent">
+        
+        {% if visits %}
+        
+        <div id="entries">
+            {% for visit in visits %}
+            
+            <div class="entry">
+                <p><strong>User Agent:</strong> {{ visit.user_agent }}</p>
+                
+                <div class="col">
+                    <p><strong>Date:</strong> {{ visit.date|date:"M d, Y f A T" }}</p>
+                    <p><strong>IP Address:</strong> {{ visit.ip_address }}</p>
+                    <p><strong>Language:</strong> {{ visit.language }}</p>
+                </div>
+                
+                <div class="col">
+                    <p><strong>Screen:</strong> {{ visit.screen_size }} @ {{ visit.color_depth }}</p>
+                    <p><strong>Cookies Enabled:</strong> {{ visit.cookies_enabled }}</p>
+                    <p><strong>Java Enabled:</strong> {{ visit.java_enabled }}</p>
+                </div>
+                
+                <div class="clearFix"></div>
+            </div>
+            
+            {% endfor %}
+        </div>
+        
+        {% endif %}
+        
+        <p id="clearAction" class="whiteShadow"><a href="#" onclick="clearVisits();">Clear</a></p>
+        
+        </div>
+    </body>
+</html>

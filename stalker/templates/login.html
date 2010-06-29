@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stalker | Login</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/global.css" type="text/css">
+        <link rel="stylesheet" href="/static/login.css" type="text/css">
+        
+        <script type="text/javascript">
+            
+            function loaded() {
+                if (document.cookie.length > 0) {
+                    var name = "password=";
+                    var start = document.cookie.indexOf(name);
+                    
+                    if (start != -1) {
+                        start = start + name.length;
+                        var end = document.cookie.indexOf(";", start);
+                        
+                        if (end == -1) {
+                            end = document.cookie.length;
+                        }
+                        
+                        var password = document.cookie.substring(start, end);
+                        invokeValidateRequest(password);
+                    }
+                }
+            }
+            
+            function invokeValidateRequest (password) {
+                var request = new XMLHttpRequest();
+                
+                request.onreadystatechange = function() {
+                    if (request.readyState == 4) {
+                        if (request.responseText == "OK") {
+                            document.cookie = "password=" + escape(password) + ";";
+                            window.location = "/visits"; // redirect
+                        }
+                        else {
+                            displayError();
+                            shakeWindow();
+                        }
+                    }
+                };
+                
+                request.open("POST", "/validateLogin?p=" + password, true);
+                request.send("");
+            }
+            
+            function validateLogin() {
+                var password = document.getElementById("passwordField").value;
+                invokeValidateRequest(password);
+            }
+            
+            function displayError() {
+                var prompt = document.getElementById("prompt");
+                var errorText = "The password you entered was invalid. Please try again.";
+                
+                if (document.all) {
+                     prompt.innerText = errorText;
+                }
+                else {
+                     prompt.textContent = errorText;
+                }
+                
+                prompt.style.color = "red";
+            }
+            
+            function shakeWindow() {
+                var login = document.getElementById("loginWindow");
+                login.style.webkitAnimationName = '';
+                
+                window.setTimeout(function() {
+                    login.style.webkitAnimationName = 'shake';
+                }, 0);
+            }
+            
+        </script>
+    </head>
+    
+    <body onload="loaded();">
+        <div id="parent">
+            <div id="loginWindow">
+                <div class="container">
+                    <p id="prompt">Enter your password in the box below to view your visitors' statistics.</p>
+                    
+                    <div class="form">
+                        <input id="passwordField" class="passwordBox" type="password" onkeydown="if(event.keyCode==13)validateLogin();">
+                        <a class="loginButton" onclick="validateLogin();" href="#">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
