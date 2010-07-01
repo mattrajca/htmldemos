@@ -29,7 +29,7 @@ function drawContext() {
     
     context.closePath();
     context.stroke();
-
+    
     // spam prevention
     var user = "matt.rajca";
     var host = "me.com";
@@ -47,7 +47,7 @@ function loaded() {
     if (window['Audio']) {
         sendSound = new Audio('');
         sendSound.autobuffer = true;
-
+        
         canPlayOgg = (sendSound.canPlayType("audio/ogg") != "no") && (sendSound.canPlayType("audio/ogg") != "");
         canPlayMp3 = (sendSound.canPlayType("audio/mpeg") != "no") && (sendSound.canPlayType("audio/mpeg") != "");
         
@@ -76,26 +76,41 @@ function sendMessage() {
     req.open("POST", "/sendMessage", true);
     req.send(document.getElementById("messageArea").value);
     
-    if (sendSound) {
-        sendSound.play();
-    }
-    
     var pc = getPostcard();
     var x = (document.body.clientWidth / 2) + 362;
     var transform = "rotate(-2deg) translateX(" + x + "px)";
     
     if ('MozTransform' in document.body.style) {
+        if (sendSound) {
+            sendSound.play();
+        }
+        
         pc.style.MozTransform = transform;
         displaySuccessDialog(); // moz-transition currently doesn't animate moz-transform's
     }
     
     if ('webkitTransform' in document.body.style) {
+        if (sendSound) {
+            setTimeout("sendSound.play();", 1000);
+        }
+        
+        var final_stamp = document.getElementById("final");
+        final_stamp.style.opacity = "1";
+        final_stamp.style.webkitTransform = "scale(1)";
+        
         pc.addEventListener('webkitTransitionEnd', displaySuccessDialog, false);
         pc.style.webkitTransform = transform;
     }
 }
 
+var successCount = -1;
+
 function displaySuccessDialog (event) {
+    successCount++;
+    
+    if (successCount < 2)
+        return;
+    
     var dialog = document.createElement("div");
     dialog.className = "dialog";
     
@@ -106,4 +121,6 @@ function displaySuccessDialog (event) {
     dialog.appendChild(p);
     
     document.body.appendChild(dialog);
+    
+    successCount = 0;
 }
