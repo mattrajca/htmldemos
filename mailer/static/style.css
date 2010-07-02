@@ -41,7 +41,7 @@ div.dialog p {
     -moz-box-shadow: 0px 0px 6px #707070;
     -webkit-box-shadow: 0px 0px 6px #707070;
     -webkit-transition: -webkit-transform 0.6s ease-in;
-    -webkit-transition-delay: 1s;
+    -webkit-transition-delay: 0.8s;
 }
 #postcard div {
     width: 296px;

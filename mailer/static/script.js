@@ -86,12 +86,12 @@ function sendMessage() {
         }
         
         pc.style.MozTransform = transform;
-        displaySuccessDialog(); // moz-transition currently doesn't animate moz-transform's
+        displaySuccessDialog(null, true); // moz-transition currently doesn't animate moz-transform's
     }
     
     if ('webkitTransform' in document.body.style) {
         if (sendSound) {
-            setTimeout("sendSound.play();", 1000);
+            setTimeout("sendSound.play();", 800);
         }
         
         var final_stamp = document.getElementById("final");
@@ -105,10 +105,10 @@ function sendMessage() {
 
 var successCount = -1;
 
-function displaySuccessDialog (event) {
+function displaySuccessDialog (event, mozilla) {
     successCount++;
     
-    if (successCount < 2)
+    if (successCount < 2 && mozilla == undefined)
         return;
     
     var dialog = document.createElement("div");
