@@ -34,6 +34,10 @@ class LogVisitHandler(webapp.RequestHandler):
 
 class VisitsHandler(webapp.RequestHandler):
     def get(self):
+        if self.request.cookies.get('password', '') != PASSWORD:
+            self.response.out.write("Invalid login")
+            return
+        
         visits = db.GqlQuery("SELECT * FROM Visit ORDER BY date DESC")
         
         if visits.count() == 0:
@@ -45,6 +49,10 @@ class VisitsHandler(webapp.RequestHandler):
 
 class LoginHandler(webapp.RequestHandler):
     def get(self):
+        if self.request.cookies.get('password', '') == PASSWORD:
+            self.redirect("/visits")
+            return
+        
         path = os.path.join(os.path.dirname(__file__), 'templates', 'login.html')
         self.response.out.write(template.render(path, { } ))
 

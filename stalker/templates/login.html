@@ -8,32 +8,15 @@
         
         <script type="text/javascript">
             
-            function loaded() {
-                if (document.cookie.length > 0) {
-                    var name = "password=";
-                    var start = document.cookie.indexOf(name);
-                    
-                    if (start != -1) {
-                        start = start + name.length;
-                        var end = document.cookie.indexOf(";", start);
-                        
-                        if (end == -1) {
-                            end = document.cookie.length;
-                        }
-                        
-                        var password = document.cookie.substring(start, end);
-                        invokeValidateRequest(password);
-                    }
-                }
-            }
-            
-            function invokeValidateRequest (password) {
+            function validateLogin() {
+                var password = document.getElementById("passwordField").value;
+                
                 var request = new XMLHttpRequest();
                 
                 request.onreadystatechange = function() {
                     if (request.readyState == 4) {
                         if (request.responseText == "OK") {
-                            document.cookie = "password=" + escape(password) + ";";
+                            document.cookie = "password=" + escape(password) + "; path=/; expires=Sun, 1 Aug 2020 10:10:10 UTC;";
                             window.location = "/visits"; // redirect
                         }
                         else {
@@ -45,11 +28,6 @@
                 
                 request.open("POST", "/validateLogin?p=" + password, true);
                 request.send("");
-            }
-            
-            function validateLogin() {
-                var password = document.getElementById("passwordField").value;
-                invokeValidateRequest(password);
             }
             
             function displayError() {
@@ -85,7 +63,7 @@
                     <p id="prompt">Enter your password in the box below to view your visitors' statistics.</p>
                     
                     <div class="form">
-                        <input id="passwordField" class="passwordBox" type="password" onkeydown="if(event.keyCode==13)validateLogin();">
+                        <input id="passwordField" class="passwordBox" type="password" onkeydown="if(event.keyCode==13)validateLogin();" />
                         <a class="loginButton" onclick="validateLogin();" href="#">Login</a>
                     </div>
                 </div>
