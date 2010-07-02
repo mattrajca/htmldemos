@@ -36,7 +36,7 @@ function drawContext() {
     
     var baseline = 4;
     var indent = 60;
-
+    
     context.font = "26px Angelina";
     context.fillText("Matt Rajca", indent, firstY - baseline);
     context.fillText(user + "@" + host, indent, firstY + delta - baseline);
@@ -95,8 +95,7 @@ function sendMessage() {
         }
         
         var final_stamp = document.getElementById("final");
-        final_stamp.style.opacity = "1";
-        final_stamp.style.webkitTransform = "scale(1)";
+        final_stamp.className = "outState";
         
         pc.addEventListener('webkitTransitionEnd', displaySuccessDialog, false);
         pc.style.webkitTransform = transform;
