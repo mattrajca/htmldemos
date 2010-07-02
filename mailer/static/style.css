@@ -13,8 +13,8 @@ body {
 div.dialog {
     background-color: white;
     position: absolute;
-    left: 50%;
     top: 100px;
+    left: 50%;
     margin-left: -130px;
     width: 260px;
     display: block;
@@ -82,15 +82,13 @@ div.dialog p {
     top: 28px;
     right: 56px;
     opacity: 0;
+    display: none;
     -webkit-transform: scale(5);
     -webkit-transition: all 0.5s;
 }
 #mailingInfo #top img.outState#final {
     opacity: 1;
     -webkit-transform: scale(1);
-}
-#mailingInfo canvas {
-    font-family: Angelina;
 }
 a.glossyButton {
     background-image: -moz-linear-gradient(270deg, #888199, #5F5B79);

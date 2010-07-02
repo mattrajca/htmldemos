@@ -95,11 +95,18 @@ function sendMessage() {
         }
         
         var final_stamp = document.getElementById("final");
-        final_stamp.className = "outState";
+        final_stamp.style.display = "block";
+        
+        setTimeout('stampPostcard();', 0);
         
         pc.addEventListener('webkitTransitionEnd', displaySuccessDialog, false);
         pc.style.webkitTransform = transform;
     }
+}
+
+function stampPostcard() {
+    var final_stamp = document.getElementById("final");
+    final_stamp.className = "outState";
 }
 
 var successCount = -1;
