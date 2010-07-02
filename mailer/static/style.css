@@ -32,7 +32,6 @@ div.dialog p {
     background-image: -moz-linear-gradient(270deg, white, #F9F9F9);
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F9F9F9));
     position: fixed;
-    left: 50%;
     top: 150px;
     margin-left: -318px;
     width: 620px;
