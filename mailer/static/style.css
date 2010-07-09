@@ -1,116 +1,116 @@
 @font-face {
-    font-family: Angelina;
-    src: url('/static/angelina.ttf');
+	font-family: Angelina;
+	src: url('/static/angelina.ttf');
 }
 html {
-    height: 100%;
+	height: 100%;
 }
 body {
-    background-image: -moz-linear-gradient(270deg, #7BB43C, #458D30);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#7BB43C), to(#458D30));
-    font-family: Helvetica;
+	background-image: -moz-linear-gradient(270deg, #7BB43C, #458D30);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#7BB43C), to(#458D30));
+	font-family: Helvetica;
 }
 div.dialog {
-    background-color: white;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    margin-left: -130px;
-    width: 260px;
-    display: block;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-box-shadow: 0px 0px 5px #707070;
-    -webkit-box-shadow: 0px 0px 5px #707070;
+	background-color: white;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	margin-left: -130px;
+	width: 260px;
+	display: block;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 0px 0px 5px #707070;
+	-webkit-box-shadow: 0px 0px 5px #707070;
 }
 div.dialog p {
-    margin: 8px;
-    font-size: 14px;
-    text-align: center;
+	margin: 8px;
+	font-size: 14px;
+	text-align: center;
 }
 #postcard {
-    background-image: -moz-linear-gradient(270deg, white, #F9F9F9);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F9F9F9));
-    position: fixed;
-    top: 150px;
-    margin-left: -318px;
-    width: 620px;
-    height: 380px;
-    padding: 16px;
-    -moz-box-shadow: 0px 0px 6px #707070;
-    -webkit-box-shadow: 0px 0px 6px #707070;
-    -webkit-transition: -webkit-transform 0.6s ease-in;
-    -webkit-transition-delay: 0.8s;
+	background-image: -moz-linear-gradient(270deg, white, #F9F9F9);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F9F9F9));
+	position: fixed;
+	top: 150px;
+	margin-left: -318px;
+	width: 620px;
+	height: 380px;
+	padding: 16px;
+	-moz-box-shadow: 0px 0px 6px #707070;
+	-webkit-box-shadow: 0px 0px 6px #707070;
+	-webkit-transition: -webkit-transform 0.6s ease-in;
+	-webkit-transition-delay: 0.8s;
 }
 #postcard div {
-    width: 296px;
-    height: 100%;
+	width: 296px;
+	height: 100%;
 }
 #messageSide {
-    border-right: 1px solid #CACACA;
-    float: left;
-    padding-right: 12px;
+	border-right: 1px solid #CACACA;
+	float: left;
+	padding-right: 12px;
 }
 #messageSide textarea {
-    border: 0;
-    background-color: rgba(0,0,0,0);
-    font-family: Angelina;
-    font-size: 26px;
-    width: 100%;
-    height: 100%;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    outline: none;
-    -moz-resize: none;
-    resize: none;
+	border: 0;
+	background-color: rgba(0,0,0,0);
+	font-family: Angelina;
+	font-size: 26px;
+	width: 100%;
+	height: 100%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	outline: none;
+	-moz-resize: none;
+	resize: none;
 }
 #mailingInfo {
-    float: right;
-    padding-left: 12px;
+	float: right;
+	padding-left: 12px;
 }
 #mailingInfo #top {
-    height: 79px;
+	height: 79px;
 }
 #mailingInfo #top img#stamp {
-    position: absolute;
-    padding: 4px;
-    border: 1px solid #CACACA;
-    right: 16px;
+	position: absolute;
+	padding: 4px;
+	border: 1px solid #CACACA;
+	right: 16px;
 }
 #mailingInfo #top img#final {
-    position: absolute;
-    top: 28px;
-    right: 56px;
-    opacity: 0;
-    display: none;
-    -webkit-transform: scale(5);
-    -webkit-transition: all 0.5s;
+	position: absolute;
+	top: 28px;
+	right: 56px;
+	opacity: 0;
+	display: none;
+	-webkit-transform: scale(5);
+	-webkit-transition: all 0.5s;
 }
 #mailingInfo #top img.outState#final {
-    opacity: 1;
-    -webkit-transform: scale(1);
+	opacity: 1;
+	-webkit-transform: scale(1);
 }
 a.glossyButton {
-    background-image: -moz-linear-gradient(270deg, #888199, #5F5B79);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#888199), to(#5F5B79));
-    padding: 4px 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60px;
-    display: block;
-    text-align: center;
-    border: 1px solid #62516E;
-    text-decoration: none;
-    font-size: 14px;
-    color: white;
-    text-shadow: 0px 1px black;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
+	background-image: -moz-linear-gradient(270deg, #888199, #5F5B79);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#888199), to(#5F5B79));
+	padding: 4px 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60px;
+	display: block;
+	text-align: center;
+	border: 1px solid #62516E;
+	text-decoration: none;
+	font-size: 14px;
+	color: white;
+	text-shadow: 0px 1px black;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
 }
 a.glossyButton:hover {
-    background-image: -moz-linear-gradient(90deg, #888199, #5F5B79);
-    background-image: -webkit-gradient(linear, left top, left bottom, to(#888199), from(#5F5B79));
+	background-image: -moz-linear-gradient(90deg, #888199, #5F5B79);
+	background-image: -webkit-gradient(linear, left top, left bottom, to(#888199), from(#5F5B79));
 }
 div.clearFix {
-    clear: both;
+	clear: both;
 }

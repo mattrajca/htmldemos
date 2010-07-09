@@ -10,22 +10,22 @@ import os
 ADDRESSEE = ""
 
 class SendMessageHandler(webapp.RequestHandler):
-    def post(self):
-        mail.send_mail(sender=ADDRESSEE,to=ADDRESSEE,subject="Website Feedback",body=self.request.body)
+	def post(self):
+		mail.send_mail(sender=ADDRESSEE,to=ADDRESSEE,subject="Website Feedback",body=self.request.body)
 
 
 class MainHandler(webapp.RequestHandler):
-    def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'templates', 'index.html')
-        self.response.out.write(template.render(path, { } ))
+	def get(self):
+		path = os.path.join(os.path.dirname(__file__), 'templates', 'index.html')
+		self.response.out.write(template.render(path, { } ))
 
 
 def main():
-    application = webapp.WSGIApplication([
-                                ('/', MainHandler),
-                                ('/sendMessage', SendMessageHandler)], debug=True)
-    util.run_wsgi_app(application)
+	application = webapp.WSGIApplication([
+								('/', MainHandler),
+								('/sendMessage', SendMessageHandler)], debug=True)
+	util.run_wsgi_app(application)
 
 
 if __name__ == '__main__':
-    main()
+	main()

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>stalker</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/static/global.css" type="text/css">
-        <link rel="stylesheet" href="/static/main.css" type="text/css">
-        
-        <script type="text/javascript">
-            
-            function logVisit() {
-                var req = new XMLHttpRequest();
-                
-                var url = "/logVisit?ua=" + escape(navigator.userAgent);
-                url += "&l=" + escape(navigator.language);
-                url += "&ss=" + escape(window.screen.width + "x" + window.screen.height);
-                url += "&cd=" + escape(window.screen.colorDepth + "bpp");
-                url += "&ce=" + escape(navigator.cookieEnabled);
-                url += "&je=" + escape(navigator.javaEnabled());
-                
-                req.open("POST", url, true);
-                req.send("");
-            }
-            
-        </script>
-    </head>
-    
-    <body class="centerText" onload="logVisit();">
-        <h1 class="whiteShadow">Your visit has been logged!</h1>
-        <p class="whiteShadow"><a href="/login">View visits</a></p>
-    </body>
+	<head>
+		<title>stalker</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="/static/global.css" type="text/css">
+		<link rel="stylesheet" href="/static/main.css" type="text/css">
+		
+		<script type="text/javascript">
+			
+			function logVisit() {
+				var req = new XMLHttpRequest();
+				
+				var url = "/logVisit?ua=" + escape(navigator.userAgent);
+				url += "&l=" + escape(navigator.language);
+				url += "&ss=" + escape(window.screen.width + "x" + window.screen.height);
+				url += "&cd=" + escape(window.screen.colorDepth + "bpp");
+				url += "&ce=" + escape(navigator.cookieEnabled);
+				url += "&je=" + escape(navigator.javaEnabled());
+				
+				req.open("POST", url, true);
+				req.send("");
+			}
+			
+		</script>
+	</head>
+	
+	<body class="centerText" onload="logVisit();">
+		<h1 class="whiteShadow">Your visit has been logged!</h1>
+		<p class="whiteShadow"><a href="/login">View visits</a></p>
+	</body>
 </html>
