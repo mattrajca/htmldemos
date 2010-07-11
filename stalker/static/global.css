@@ -1,7 +1,7 @@
 body {
 	margin-top: 100px;
 	background-color: #D6DDE6;
-	font-family: Helvetica;
+	font-family: Helvetica, Arial, sans-serif;
 }
 h1 {
 	font-size: 24px;
@@ -14,8 +14,8 @@ p {
 a {
 	font-size: 14px;
 	color: #4F4F4F;
-	-webkit-transition: color 0.25s;
-	-moz-transition: color 0.25s;
+	-webkit-transition: color 250ms;
+	-moz-transition: color 250ms;
 }
 a:hover {
 	color: #001599;

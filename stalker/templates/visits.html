@@ -11,7 +11,7 @@
 		function clearVisits() {
 			var req = new XMLHttpRequest();
 			req.open("POST", "/clear", true);
-			req.send("");
+			req.send();
 			
 			animateClear();
 		}
@@ -19,7 +19,7 @@
 		function animateClear() {
 			var parent = document.getElementById("parent");
 			var entries = document.getElementById("entries");
-			parent.style.top = "-" + (entries.clientHeight + 4) + "px";
+			parent.style.webkitTransform = "translateY(-" + (entries.clientHeight + 18) + "px)";
 		}
 		
 	</script>

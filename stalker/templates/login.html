@@ -27,20 +27,12 @@
 			};
 			
 			request.open("POST", "/validateLogin?p=" + password, true);
-			request.send("");
+			request.send();
 		}
 		
 		function displayError() {
 			var prompt = document.getElementById("prompt");
-			var errorText = "The password you entered was invalid. Please try again.";
-			
-			if (document.all) {
-				 prompt.innerText = errorText;
-			}
-			else {
-				 prompt.textContent = errorText;
-			}
-			
+			prompt.innerHTML = "The password you entered was invalid. Please try again.";
 			prompt.style.color = "red";
 		}
 		

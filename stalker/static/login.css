@@ -17,7 +17,7 @@ div#loginWindow {
 	border: 1px solid #AEB6C1;
 	margin: 100px auto 0 auto;
 	width: 440px;
-	-webkit-animation-duration: 0.15s;
+	-webkit-animation-duration: 150ms;
 	-webkit-animation-iteration-count: 2;
 	-webkit-animation-direction: alternate;
 	-webkit-animation-timing-function: ease-in-out;
@@ -53,8 +53,8 @@ a.loginButton {
 	vertical-align: middle;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	-webkit-transition: all 0.25s;
-	-moz-transition: all 0.25s;
+	-webkit-transition: all 250ms;
+	-moz-transition: all 250ms;
 }
 a.loginButton:hover {
 	background-color: #F0F0F0;
