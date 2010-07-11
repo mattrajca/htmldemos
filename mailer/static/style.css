@@ -8,16 +8,15 @@ html {
 body {
 	background-image: -moz-linear-gradient(270deg, #7BB43C, #458D30);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#7BB43C), to(#458D30));
-	font-family: Helvetica;
+	font-family: Helvetica, Arial, sans-serif;
 }
 div.dialog {
 	background-color: white;
 	position: absolute;
-	top: 100px;
 	left: 50%;
+	top: 100px;
 	margin-left: -130px;
 	width: 260px;
-	display: block;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-box-shadow: 0px 0px 5px #707070;
@@ -33,14 +32,15 @@ div.dialog p {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F9F9F9));
 	position: fixed;
 	top: 150px;
-	margin-left: -318px;
+	left: 50%;
+	margin-left: -326px;
 	width: 620px;
 	height: 380px;
 	padding: 16px;
 	-moz-box-shadow: 0px 0px 6px #707070;
 	-webkit-box-shadow: 0px 0px 6px #707070;
-	-webkit-transition: -webkit-transform 0.6s ease-in;
-	-webkit-transition-delay: 0.8s;
+	-webkit-transition: -webkit-transform 600ms ease-in;
+	-webkit-transition-delay: 800ms;
 }
 #postcard div {
 	width: 296px;
@@ -53,7 +53,7 @@ div.dialog p {
 }
 #messageSide textarea {
 	border: 0;
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 	font-family: Angelina;
 	font-size: 26px;
 	width: 100%;
@@ -82,9 +82,9 @@ div.dialog p {
 	top: 28px;
 	right: 56px;
 	opacity: 0;
-	display: none;
+	visibility: none;
 	-webkit-transform: scale(5);
-	-webkit-transition: all 0.5s;
+	-webkit-transition: opacity 500ms, -webkit-transform 500ms;
 }
 #mailingInfo #top img.outState#final {
 	opacity: 1;

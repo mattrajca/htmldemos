@@ -62,9 +62,6 @@ function loaded() {
 		}
 	}
 	
-	// center
-	getPostcard().style.left = (document.body.clientWidth / 2) + "px";
-	
 	drawContext();
 	
 	// this is necessary if the custom font hasn't loaded by the time the page loads
@@ -77,7 +74,7 @@ function sendMessage() {
 	req.send(document.getElementById("messageArea").value);
 	
 	var pc = getPostcard();
-	var x = (document.body.clientWidth / 2) + 362;
+	var x = document.body.clientWidth / 2 + 370;
 	var transform = "rotate(-2deg) translateX(" + x + "px)";
 	
 	if ('MozTransform' in document.body.style) {
@@ -86,16 +83,15 @@ function sendMessage() {
 		}
 		
 		pc.style.MozTransform = transform;
-		displaySuccessDialog(null, true); // moz-transition currently doesn't animate moz-transform's
+		displaySuccessDialog(null); // moz-transition currently doesn't animate moz-transform's
 	}
-	
-	if ('webkitTransform' in document.body.style) {
+	else if ('webkitTransform' in document.body.style) {
 		if (sendSound) {
 			setTimeout("sendSound.play();", 800);
 		}
 		
-		var final_stamp = document.getElementById("final");
-		final_stamp.style.display = "block";
+		var finalStamp = document.getElementById("final");
+		finalStamp.style.visibility = "visible";
 		
 		setTimeout('stampPostcard();', 0);
 		
@@ -105,28 +101,24 @@ function sendMessage() {
 }
 
 function stampPostcard() {
-	var final_stamp = document.getElementById("final");
-	final_stamp.className = "outState";
+	var finalStamp = document.getElementById("final");
+	finalStamp.className = "outState";
 }
 
-var successCount = -1;
-
-function displaySuccessDialog (event, mozilla) {
-	successCount++;
+function displaySuccessDialog (event) {
+	if (event != null) {
+		if (event.target.id != "postcard")
+			return;
+	}
 	
-	if (successCount < 2 && mozilla == undefined)
-		return;
+	document.body.removeChild(getPostcard());
 	
 	var dialog = document.createElement("div");
 	dialog.className = "dialog";
 	
 	var p = document.createElement("p");
-	var text = document.createTextNode("Your feedback was sent! Thanks!");
-	p.appendChild(text);
-	
+	p.innerHTML = "Your feedback was sent! Thanks!";
 	dialog.appendChild(p);
 	
 	document.body.appendChild(dialog);
-	
-	successCount = 0;
 }

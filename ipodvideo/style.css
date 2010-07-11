@@ -6,9 +6,10 @@ body {
 	width: 640px;
 	height: 719px;
 	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.6, transparent), to(white));
+	position: relative;
 }
 #ipod video {
-	position: relative;
+	position: absolute;
 	left: 116px;
 	top: 103px;
 	width: 306px;
