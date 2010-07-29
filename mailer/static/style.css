@@ -82,7 +82,7 @@ div.dialog p {
 	top: 28px;
 	right: 56px;
 	opacity: 0;
-	visibility: none;
+	visibility: hidden;
 	-webkit-transform: scale(5);
 	-webkit-transition: opacity 500ms, -webkit-transform 500ms;
 }
