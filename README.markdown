@@ -3,10 +3,15 @@ htmldemos
 
 A bunch of random demos that demonstrate different capabilities of HTML5.
 
-animatedgallery
+animated-gallery
 ----------------
 
 Demonstrates how to create a simple CSS3 gallery using WebKit animations for live filtering, simulating the behavior of the native NSCollectionView and IKImageBrowserView classes on Mac OS X. For best results use Safari, which leverages GPU acceleration when animating the -webkit-transform property. Watch a [video](http://vimeo.com/13605436) of it in action!
+
+derivative-draw
+---------------
+
+Practice drawing the derivatives of given functions. The HTML5 canvas element is used to draw the graphs and the true derivatives (in an animated fashion).
 
 ipodvideo
 ---------
