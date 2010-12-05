@@ -3,11 +3,6 @@ htmldemos
 
 A bunch of random demos that demonstrate different capabilities of HTML5.
 
-imagewrap
----------
-
-Demonstrates how elements like lists can be wrapped around images.
-
 ipodvideo
 ---------
 
