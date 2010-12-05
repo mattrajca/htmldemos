@@ -1,0 +1,32 @@
+body {
+	padding-top: 20px;
+}
+div#container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 768px;
+}
+div#bar {
+	padding: 0 8px 16px 0;
+	border-bottom: 1px solid #B3B3B3;
+	width: 100%;
+}
+div#bar input[type="search"] {
+	width: 170px;
+	float: right;
+}
+div#gallery {
+	padding: 18px 8px;
+	min-height: 1000px;
+}
+div#gallery div {
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	-webkit-transition: -webkit-transform 1s;
+}
+div.clearFix {
+	clear: both;
+}
