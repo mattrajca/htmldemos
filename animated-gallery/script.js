@@ -94,7 +94,7 @@ function flickResponse (resp) {
 
 function loaded() {
 	var script = document.createElement("script");
-	script.src = "http://www.flickr.com/services/rest/?method=flickr.interestingness.getList&format=json&jsoncallback=flickResponse&api_key=78bcb62f001aea68ccab5c6e145334e8";
+	script.src = "http://www.flickr.com/services/rest/?method=flickr.interestingness.getList&format=json&jsoncallback=flickResponse&api_key=7d542a5d689c4c082dbe34c745f9830f";
 	
 	document.head.appendChild(script);
 }
