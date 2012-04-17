@@ -23,10 +23,21 @@ function loaded() {
 	canvas = document.getElementById("main");
 	ctx = canvas.getContext("2d");
 	
+	if (window.devicePixelRatio) {
+		canvas.setAttribute("width", WIDTH * window.devicePixelRatio);
+		canvas.setAttribute("height", HEIGHT * window.devicePixelRatio);
+		
+		ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+	}
+	
 	canvas.addEventListener("mousedown", mouseDown, false);
 	canvas.addEventListener("mousemove", mouseMove, false);
 	canvas.addEventListener("mouseup", mouseUp, false);
 	canvas.addEventListener("mouseout", mouseOut, false);
+	
+	canvas.addEventListener("touchstart", mouseDown, false);
+	canvas.addEventListener("touchmove", mouseMove, false);
+	canvas.addEventListener("touchend", mouseUp, false);
 	
 	redraw();
 }
@@ -56,6 +67,8 @@ function pushDeriv (event, move) {
 }
 
 function mouseDown (event) {
+	event.preventDefault();
+	
 	pushDeriv (event, true);
 	drawing = true;
 	redraw();
@@ -65,11 +78,15 @@ function mouseMove (event) {
 	if (!drawing)
 		return;
 	
+	event.preventDefault();
+	
 	pushDeriv (event, false);
 	redraw();
 }
 
 function mouseUp (event) {
+	event.preventDefault();
+	
 	drawing = false;
 	redraw();
 }

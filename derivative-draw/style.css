@@ -49,6 +49,10 @@ body {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 }
+#main {
+	width: 400px;
+	height: 320px;
+}
 #toolbar {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#707d58), to(#5a6643));
 	background-image: -moz-linear-gradient(top, #707d58, #5a6643);
